@@ -326,8 +326,8 @@ img { max-width: 100%; display: block; }
 /* ---------- Team (Leiterrunde) ---------- */
 .team {
   display: grid;
-  gap: 24px;
-  grid-template-columns: repeat(auto-fill, minmax(230px, 1fr));
+  gap: 26px;
+  grid-template-columns: repeat(auto-fill, minmax(290px, 1fr));
 }
 .leiter {
   background: var(--weiss);
@@ -340,23 +340,34 @@ img { max-width: 100%; display: block; }
 .team .leiter:nth-child(odd)  { transform: rotate(-1deg); }
 .team .leiter:nth-child(even) { transform: rotate(1deg); }
 .leiter:hover { transform: rotate(0deg); }
-.avatar {
-  width: 96px;
-  height: 96px;
-  border-radius: 50%;
-  margin: 0 auto 12px;
+/* Foto-Fläche: zeigt Platzhalter, bis ein <img> eingefügt wird */
+.leiter-foto {
+  width: 100%;
+  aspect-ratio: 1 / 1;
+  border-radius: 16px;
+  margin-bottom: 14px;
+  overflow: hidden;
   display: flex;
+  flex-direction: column;
   align-items: center;
   justify-content: center;
+  gap: 4px;
+  background: var(--himmel);
+  color: var(--blau);
+}
+.leiter:nth-child(3n) .leiter-foto { color: var(--dunkelblau); }
+.leiter-initial {
   font-family: var(--font-display);
   font-weight: 800;
-  font-size: 2rem;
-  color: var(--weiss);
-  background: var(--blau);
+  font-size: 4rem;
+  line-height: 1;
 }
-.leiter:nth-child(3n) .avatar { background: var(--dunkelblau); }
-.leiter:nth-child(3n+2) .avatar { background: var(--akzent); color: var(--dunkelblau); }
-.avatar img { width: 100%; height: 100%; object-fit: cover; border-radius: 50%; }
+.leiter-foto-hinweis {
+  font-size: 0.85rem;
+  font-weight: 700;
+  opacity: 0.65;
+}
+.leiter-foto img { width: 100%; height: 100%; object-fit: cover; }
 .leiter h3 { margin-bottom: 8px; }
 .leiter dl { margin: 0; font-size: 0.92rem; text-align: left; }
 .leiter dt {
