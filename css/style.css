@@ -153,6 +153,16 @@ img { max-width: 100%; display: block; }
 }
 .hat-unternav:hover .unternav,
 .hat-unternav:focus-within .unternav { display: flex !important; }
+/* unsichtbare Brücke über die 6px-Lücke, damit der Hover beim
+   Bewegen vom Link zum Dropdown nicht abreißt */
+.unternav::before {
+  content: '';
+  position: absolute;
+  top: -12px;
+  left: 0;
+  right: 0;
+  height: 12px;
+}
 .unternav a { border-radius: 10px; }
 
 /* Hamburger (mobil) */
