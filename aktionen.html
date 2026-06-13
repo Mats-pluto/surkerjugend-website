@@ -45,20 +45,9 @@
 
   <section class="abschnitt">
     <div class="inhalt">
-      <div class="karten">
-        <div class="karte karte--gekippt-l">
-          <h3>30.05.2026 · Maiaktion</h3>
-          <p>Unsere Maiaktion findet bald statt. Tragt euch den Termin schon im Kalender ein.<br>
-          Anmelden kannst du dich <strong>bis zum 27.05.!</strong> 👇🏼</p>
-          <a class="knopf knopf--blau" href="https://forms.gle/Cq2N6z7gQox6rB7m9" target="_blank" rel="noopener">Zur Anmeldung</a>
-        </div>
-        <div class="karte karte--gekippt-r">
-          <h3>04.06. – 07.06.2026 · Surker Jugend-Fahrt</h3>
-          <p>Wie jedes Jahr findet wieder unsere Surker Jugend-Fahrt statt. Über Fronleichnam fahren wir in die Schützenhalle nach Bredelar, Marsberg.<br>
-          Anmelden kannst du dich unter diesem Link. 👇🏼</p>
-          <a class="knopf knopf--blau" href="https://forms.gle/Cq2N6z7gQox6rB7m9" target="_blank" rel="noopener">Zur Anmeldung</a>
-        </div>
-      </div>
+      <!-- Die Aktionen werden aus data/aktionen.json geladen (siehe js/aktionen.js)
+           und über das CMS bearbeitet – hier bitte nicht von Hand editieren. -->
+      <div class="karten" id="aktionen-liste"></div>
     </div>
   </section>
 
@@ -94,5 +83,6 @@
 </footer>
 
 <script src="js/main.js"></script>
+<script src="js/aktionen.js"></script>
 </body>
 </html>
