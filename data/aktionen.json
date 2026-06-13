@@ -4,14 +4,15 @@
       "datum": "30.05.2026",
       "titel": "Maiaktion",
       "text": "Unsere Maiaktion findet bald statt. Tragt euch den Termin schon im Kalender ein.\nAnmelden kannst du dich **bis zum 27.05.!** 👇🏼",
-      "anmeldung_url": "https://forms.gle/Cq2N6z7gQox6rB7m9"
+      "anmeldung_url": "https://forms.gle/Cq2N6z7gQox6rB7m9",
+      "bild": "assets/aktionen/images.jpg"
     },
     {
       "datum": "04.06. – 07.06.2026 (vorbei)",
       "titel": "Surker Jugend-Fahrt",
       "text": "Wie jedes Jahr findet wieder unsere Surker Jugend-Fahrt statt. Über Fronleichnam fahren wir in die Schützenhalle nach Bredelar, Marsberg.\nAnmelden kannst du dich unter diesem Link. 👇🏼",
       "anmeldung_url": "",
-      "bild": "assets/aktionen/736f7718-e00e-4f25-87ae-da755db48849.jpg"
+      "bild": "assets/aktionen/download.png"
     }
   ]
 }
