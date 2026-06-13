@@ -3,13 +3,29 @@
 # Diese Datei beschreibt, WAS im CMS bearbeitet werden kann.
 # ============================================================
 
-# --- Wo werden Änderungen gespeichert? ---
-# git-gateway = Änderungen werden als Commit ins GitHub-Repo geschrieben,
-# vermittelt über Netlify (wird in Schritt 3 aktiviert). Die Bearbeiter
-# brauchen dadurch keinen direkten Repo-Zugriff.
+# --- Wo werden Änderungen gespeichert? (Login über DecapBridge) ---
+# DecapBridge übernimmt Login + das Schreiben ins GitHub-Repo.
+# Die Bearbeiter brauchen dadurch KEINEN eigenen GitHub-Account.
 backend:
   name: git-gateway
+  repo: Mats-pluto/surkerjugend-website
   branch: main          # auf welchen Branch committet wird
+  identity_url: https://auth.decapbridge.com/sites/4ab963ec-ec37-49bf-a97c-fbca7ab2f7ad
+  gateway_url: https://gateway.decapbridge.com
+  # Aussagekräftige Commit-Nachrichten: zeigt, wer was geändert hat
+  commit_messages:
+    create: Create {{collection}} "{{slug}}" - {{author-name}} <{{author-login}}> via DecapBridge
+    update: Update {{collection}} "{{slug}}" - {{author-name}} <{{author-login}}> via DecapBridge
+    delete: Delete {{collection}} "{{slug}}" - {{author-name}} <{{author-login}}> via DecapBridge
+    uploadMedia: Upload "{{path}}" - {{author-name}} <{{author-login}}> via DecapBridge
+    deleteMedia: Delete "{{path}}" - {{author-name}} <{{author-login}}> via DecapBridge
+    openAuthoring: Message {{message}} - {{author-name}} <{{author-login}}> via DecapBridge
+
+# DecapBridge-Logo im CMS
+logo_url: https://decapbridge.com/decapcms-with-bridge.svg
+
+# Link zurück zur Website im CMS-Menü
+site_url: https://suju.codebymats.de
 
 # --- Sprache der Oberfläche ---
 locale: de
