@@ -314,15 +314,15 @@ img { max-width: 100%; display: block; }
 /* Optionaler Bild-Streifen oben in einer Aktions-Karte.
    Die negativen Ränder heben das 26px-Padding der Karte auf, damit das
    Bild bündig über die volle Breite läuft und oben mit den runden Ecken
-   abschließt. overflow:hidden schneidet das Bild an der Rundung sauber ab. */
+   abschließt. Das Bild wird IMMER komplett gezeigt (nicht zugeschnitten),
+   egal ob Hoch- oder Querformat – die Karte passt ihre Höhe ans Bild an. */
 .aktion-bild {
   margin: -26px -26px 18px;
   border-radius: calc(var(--radius) - 3px) calc(var(--radius) - 3px) 0 0;
   overflow: hidden;
-  aspect-ratio: 16 / 9;
   background: var(--himmel);
 }
-.aktion-bild img { width: 100%; height: 100%; object-fit: cover; }
+.aktion-bild img { width: 100%; height: auto; display: block; }
 
 /* ---------- Termin-Listen ---------- */
 .termin-liste {
