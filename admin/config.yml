@@ -1,0 +1,70 @@
+# ============================================================
+# Surker Jugend – CMS-Konfiguration (Decap CMS)
+# Diese Datei beschreibt, WAS im CMS bearbeitet werden kann.
+# ============================================================
+
+# --- Wo werden Änderungen gespeichert? ---
+# git-gateway = Änderungen werden als Commit ins GitHub-Repo geschrieben,
+# vermittelt über Netlify (wird in Schritt 3 aktiviert). Die Bearbeiter
+# brauchen dadurch keinen direkten Repo-Zugriff.
+backend:
+  name: git-gateway
+  branch: main          # auf welchen Branch committet wird
+
+# --- Sprache der Oberfläche ---
+locale: de
+
+# --- Wohin kommen hochgeladene Bilder? ---
+# media_folder: der echte Ordner im Repo, in dem Bilder landen.
+# public_folder: der Pfad, mit dem die Bilder später auf der Seite
+# eingebunden werden (so wie aktionen.js sie erwartet).
+media_folder: "assets/aktionen"
+public_folder: "assets/aktionen"
+
+# --- Die bearbeitbaren Inhalte ---
+collections:
+  - name: "aktionen"            # interner Name
+    label: "Aktionen"          # so heißt der Bereich im CMS-Menü
+    label_singular: "Aktion"   # Einzahl (für "Neue Aktion"-Knopf)
+    # "file" = eine einzelne Datei, in der eine Liste steht
+    # (statt vieler Einzeldateien). Passt zu data/aktionen.json.
+    files:
+      - name: "aktionsliste"
+        label: "Aktionen verwalten"
+        file: "data/aktionen.json"
+        description: "Hier könnt ihr Aktionen hinzufügen, bearbeiten, löschen und per Ziehen umsortieren."
+        fields:
+          # Das Feld "aktionen" ist eine Liste. Jeder Listeneintrag
+          # hat die darunter definierten Felder.
+          - name: "aktionen"
+            label: "Aktionen"
+            label_singular: "Aktion"
+            widget: "list"
+            # Diese Zusammenfassung zeigt das CMS in der Listübersicht,
+            # damit man Aktionen erkennt, ohne sie zu öffnen.
+            summary: "{{fields.datum}} – {{fields.titel}}"
+            fields:
+              - name: "datum"
+                label: "Datum (z.B. 30.05.2026 oder 04.06. – 07.06.2026)"
+                widget: "string"
+
+              - name: "titel"
+                label: "Titel"
+                widget: "string"
+
+              - name: "text"
+                label: "Beschreibung"
+                widget: "text"   # mehrzeiliges Textfeld
+                hint: "Für Fettschrift **Sternchen** verwenden. Zeilenumbrüche werden übernommen."
+
+              - name: "anmeldung_url"
+                label: "Anmelde-Link (optional)"
+                widget: "string"
+                required: false
+                hint: "Link zum Anmeldeformular. Leer lassen, wenn keine Anmeldung nötig ist."
+
+              - name: "bild"
+                label: "Bild (optional)"
+                widget: "image"
+                required: false
+                hint: "Optionales Bild, das oben in der Aktion angezeigt wird."
