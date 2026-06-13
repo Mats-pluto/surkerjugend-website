@@ -20,11 +20,18 @@ function formatiere(text) {
 function karte(aktion, index) {
   // Karten abwechselnd leicht links/rechts kippen (wie vorher im festen HTML)
   const kippung = index % 2 === 0 ? 'karte--gekippt-l' : 'karte--gekippt-r';
+  // Bild nur einbauen, wenn eines hinterlegt ist (sonst leer = kein Bild)
+  const bild = aktion.bild
+    ? `<div class="aktion-bild"><img src="${aktion.bild}" alt="${aktion.titel}"></div>`
+    : '';
   const knopf = aktion.anmeldung_url
     ? `<a class="knopf knopf--blau" href="${aktion.anmeldung_url}" target="_blank" rel="noopener">Zur Anmeldung</a>`
     : '';
+  // Hat die Karte ein Bild, bekommt sie eine Extra-Klasse fürs Layout
+  const mitBild = aktion.bild ? ' karte--mit-bild' : '';
   return `
-    <div class="karte ${kippung}">
+    <div class="karte ${kippung}${mitBild}">
+      ${bild}
       <h3>${aktion.datum} · ${aktion.titel}</h3>
       <p>${formatiere(aktion.text)}</p>
       ${knopf}
