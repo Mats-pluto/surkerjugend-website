@@ -11,6 +11,13 @@
       "datum": "test",
       "titel": "test",
       "text": "test"
+    },
+    {
+      "datum": "test2",
+      "titel": "test2",
+      "text": "test2",
+      "anmeldung_url": "https://geekprank.com/fake-virus/",
+      "bild": "assets/aktionen/a-beautiful-picture-of-the-eiffel-tower-in-paris-the-capital-of-france-with-a-wonderful-background-in-wonderful-natural-colors-photo.jpg"
     }
   ]
 }
