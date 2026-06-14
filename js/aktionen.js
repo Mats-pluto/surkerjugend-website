@@ -43,7 +43,11 @@ async function ladeAktionen() {
   const container = document.getElementById('aktionen-liste');
   if (!container) return;
   try {
-    const antwort = await fetch('data/aktionen.json');
+    // Cache-Buster (?t=Zeitstempel): hängt bei jedem Laden eine andere Zahl an
+    // die Adresse, damit der Browser/Server die Datei IMMER frisch lädt und
+    // nicht aus dem Cache. Wichtig bei GitHub Pages, das Dateien ~10 Min cacht –
+    // so erscheinen CMS-Änderungen sofort statt mit Verzögerung.
+    const antwort = await fetch('data/aktionen.json?t=' + Date.now());
     if (!antwort.ok) throw new Error('Daten konnten nicht geladen werden');
     const daten = await antwort.json();
     const aktionen = daten.aktionen || [];
