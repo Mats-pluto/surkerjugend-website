@@ -6,6 +6,11 @@
       "text": "Unsere Maiaktion findet bald statt. Tragt euch den Termin schon im Kalender ein.\nAnmelden kannst du dich **bis zum 27.05.!** 👇🏼",
       "anmeldung_url": "https://forms.gle/Cq2N6z7gQox6rB7m9",
       "bild": ""
+    },
+    {
+      "datum": "test",
+      "titel": "test",
+      "text": "test"
     }
   ]
 }
