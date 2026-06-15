@@ -1,0 +1,31 @@
+{
+  "leiter": [
+    { "name": "Maxi", "rolle": "", "geburtsdatum": "1999-01-01", "taetig_seit": "2015", "bild": "" },
+    { "name": "Erik", "rolle": "", "geburtsdatum": "2007-01-01", "taetig_seit": "2022", "bild": "" },
+    { "name": "Julie", "rolle": "", "geburtsdatum": "2006-01-01", "taetig_seit": "2022", "bild": "" },
+    { "name": "Victoria", "rolle": "", "geburtsdatum": "2009-01-01", "taetig_seit": "2024", "bild": "" },
+    { "name": "Zoë", "rolle": "", "geburtsdatum": "2005-01-01", "taetig_seit": "2021", "bild": "" },
+    { "name": "Till", "rolle": "", "geburtsdatum": "2008-01-01", "taetig_seit": "2024", "bild": "" },
+    { "name": "Ben", "rolle": "", "geburtsdatum": "2009-01-01", "taetig_seit": "2025", "bild": "" },
+    { "name": "Jule", "rolle": "", "geburtsdatum": "2009-01-01", "taetig_seit": "2025", "bild": "" },
+    { "name": "Hugo", "rolle": "", "geburtsdatum": "2009-01-01", "taetig_seit": "2024", "bild": "" },
+    { "name": "Noah", "rolle": "", "geburtsdatum": "2008-01-01", "taetig_seit": "2024", "bild": "" },
+    { "name": "Kristin", "rolle": "", "geburtsdatum": "2008-01-01", "taetig_seit": "2024", "bild": "" },
+    { "name": "Henri", "rolle": "", "geburtsdatum": "2006-01-01", "taetig_seit": "2022", "bild": "" },
+    { "name": "Antonia", "rolle": "", "geburtsdatum": "2006-01-01", "taetig_seit": "2024", "bild": "" },
+    { "name": "Emely", "rolle": "", "geburtsdatum": "2009-01-01", "taetig_seit": "2024", "bild": "" },
+    { "name": "Marieke", "rolle": "", "geburtsdatum": "2009-01-01", "taetig_seit": "2024", "bild": "" },
+    { "name": "Adrian", "rolle": "", "geburtsdatum": "2004-01-01", "taetig_seit": "2019", "bild": "" },
+    { "name": "Phileas", "rolle": "", "geburtsdatum": "2009-01-01", "taetig_seit": "2024", "bild": "" },
+    { "name": "Amelie", "rolle": "", "geburtsdatum": "2004-01-01", "taetig_seit": "2019", "bild": "" },
+    { "name": "Philipp", "rolle": "", "geburtsdatum": "2006-01-01", "taetig_seit": "2022", "bild": "" },
+    { "name": "Mats", "rolle": "", "geburtsdatum": "2004-01-01", "taetig_seit": "2024", "bild": "" },
+    { "name": "Nele", "rolle": "", "geburtsdatum": "2009-01-01", "taetig_seit": "2024", "bild": "" },
+    { "name": "Valentino", "rolle": "", "geburtsdatum": "2007-01-01", "taetig_seit": "2022", "bild": "" },
+    { "name": "Greta", "rolle": "", "geburtsdatum": "2010-01-01", "taetig_seit": "2026", "bild": "" },
+    { "name": "Roman", "rolle": "", "geburtsdatum": "2010-01-01", "taetig_seit": "2026", "bild": "" },
+    { "name": "Matz", "rolle": "", "geburtsdatum": "2010-01-01", "taetig_seit": "2026", "bild": "" },
+    { "name": "Finn", "rolle": "", "geburtsdatum": "2010-01-01", "taetig_seit": "2026", "bild": "" },
+    { "name": "Jona", "rolle": "", "geburtsdatum": "2010-01-01", "taetig_seit": "2026", "bild": "" }
+  ]
+}
