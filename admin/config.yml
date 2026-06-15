@@ -116,32 +116,41 @@ collections:
                 widget: "string"   # Pflichtfeld (Standard)
 
               - name: "rolle"
-                label: "Rolle (optional)"
+                label: "Rolle"
                 widget: "string"
                 required: false
-                hint: "z.B. 'Gruppenleitung' oder 'Kassenwart'. Leer lassen, wenn keine besondere Rolle – dann wird nichts angezeigt."
+                hint: "Optional, z.B. 'Gruppenleitung' oder 'Kassenwart'. Leer lassen, wenn keine besondere Rolle – dann wird nichts angezeigt."
 
               - name: "geburtsdatum"
                 label: "Geburtsdatum"
-                widget: "date"
-                # Datumsformat, in dem es in der JSON gespeichert wird.
-                # Genau dieses Format erwartet die Alters-Berechnung in leiter.js.
+                # "datetime" ist der aktuelle Widget-Typ (das alte "date" wurde
+                # entfernt). Mit time_format: false wird daraus ein reines
+                # Datumsfeld OHNE Uhrzeit – also genau ein Kalender-Tagesdatum.
+                widget: "datetime"
+                # date_format: in genau diesem Format wird der Wert in der JSON
+                # gespeichert. Passt zur Alters-Berechnung in leiter.js.
                 date_format: "YYYY-MM-DD"
-                # Anzeige im Kalender-Auswahlfeld (für die Bearbeiter)
-                format: "DD.MM.YYYY"
+                time_format: false
+                # picker_utc: false -> der Kalender rechnet NICHT in UTC um.
+                # Ohne das könnte z.B. der 01.01. beim Speichern zum 31.12.
+                # des Vorjahres "verrutschen" (bekannter Zeitzonen-Effekt) und
+                # damit das berechnete Alter um 1 verfälschen.
+                picker_utc: false
                 hint: "Aus dem Geburtsdatum wird automatisch das aktuelle Alter berechnet und angezeigt. Das genaue Datum erscheint NICHT auf der Website, nur das Alter."
 
               - name: "taetig_seit"
-                label: "Ehrenamtlich tätig seit (optional)"
+                label: "Ehrenamtlich tätig seit"
                 widget: "string"
                 required: false
-                hint: "Jahreszahl, z.B. 2024. Leer lassen, wenn unbekannt – dann wird '-' angezeigt."
+                hint: "Optional. Jahreszahl, z.B. 2024. Leer lassen, wenn unbekannt – dann wird '-' angezeigt."
 
               - name: "bild"
-                label: "Foto (optional)"
+                label: "Foto"
                 widget: "image"
                 required: false
                 # Eigener Ordner nur für Leiter-Fotos, getrennt von den Aktionsbildern.
-                media_folder: "/assets/leiter"
-                public_folder: "/assets/leiter"
-                hint: "Quadratisches Foto sieht am besten aus (z.B. 600x600px). Ohne Foto wird der Anfangsbuchstabe als Platzhalter angezeigt."
+                # Ohne führenden Slash – genau wie bei den Aktionen, damit die
+                # Pfade auf GitHub Pages (Unterverzeichnis) zuverlässig stimmen.
+                media_folder: "assets/leiter"
+                public_folder: "assets/leiter"
+                hint: "Optional. Quadratisches Foto sieht am besten aus (z.B. 600x600px). Ohne Foto wird der Anfangsbuchstabe als Platzhalter angezeigt."
