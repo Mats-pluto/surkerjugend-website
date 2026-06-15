@@ -37,10 +37,12 @@ site_url: https://suju.codebymats.de
 # --- Sprache der Oberfläche ---
 locale: de
 
-# --- Wohin kommen hochgeladene Bilder? ---
+# --- Wohin kommen hochgeladene Bilder? (Standard-Ordner) ---
 # media_folder: der echte Ordner im Repo, in dem Bilder landen.
 # public_folder: der Pfad, mit dem die Bilder später auf der Seite
 # eingebunden werden (so wie aktionen.js sie erwartet).
+# Hinweis: Einzelne Bild-Felder können diesen Standard überschreiben
+# (siehe Leiter-Foto unten -> eigener Ordner assets/leiter).
 media_folder: "assets/aktionen"
 public_folder: "assets/aktionen"
 
@@ -91,3 +93,55 @@ collections:
                 widget: "image"
                 required: false
                 hint: "Optionales Bild, das oben in der Aktion angezeigt wird."
+
+  # --- NEU: Leiterrunde ---
+  - name: "leiterrunde"
+    label: "Leiterrunde"
+    label_singular: "Leiter:in"
+    files:
+      - name: "leiterliste"
+        label: "Leiterrunde verwalten"
+        file: "data/leiter.json"
+        description: "Hier könnt ihr die Leiterrunde pflegen: Personen hinzufügen, bearbeiten, löschen und per Ziehen umsortieren. Das Alter wird automatisch aus dem Geburtsdatum berechnet – ihr müsst es also nie selbst aktualisieren. Änderungen mit 'Veröffentlichen' speichern."
+        fields:
+          - name: "leiter"
+            label: "Leiterrunde"
+            label_singular: "Person"
+            widget: "list"
+            # Zeigt Name + Rolle in der Übersicht
+            summary: "{{fields.name}}{{#if fields.rolle}} – {{fields.rolle}}{{/if}}"
+            fields:
+              - name: "name"
+                label: "Name"
+                widget: "string"   # Pflichtfeld (Standard)
+
+              - name: "rolle"
+                label: "Rolle (optional)"
+                widget: "string"
+                required: false
+                hint: "z.B. 'Gruppenleitung' oder 'Kassenwart'. Leer lassen, wenn keine besondere Rolle – dann wird nichts angezeigt."
+
+              - name: "geburtsdatum"
+                label: "Geburtsdatum"
+                widget: "date"
+                # Datumsformat, in dem es in der JSON gespeichert wird.
+                # Genau dieses Format erwartet die Alters-Berechnung in leiter.js.
+                date_format: "YYYY-MM-DD"
+                # Anzeige im Kalender-Auswahlfeld (für die Bearbeiter)
+                format: "DD.MM.YYYY"
+                hint: "Aus dem Geburtsdatum wird automatisch das aktuelle Alter berechnet und angezeigt. Das genaue Datum erscheint NICHT auf der Website, nur das Alter."
+
+              - name: "taetig_seit"
+                label: "Ehrenamtlich tätig seit (optional)"
+                widget: "string"
+                required: false
+                hint: "Jahreszahl, z.B. 2024. Leer lassen, wenn unbekannt – dann wird '-' angezeigt."
+
+              - name: "bild"
+                label: "Foto (optional)"
+                widget: "image"
+                required: false
+                # Eigener Ordner nur für Leiter-Fotos, getrennt von den Aktionsbildern.
+                media_folder: "/assets/leiter"
+                public_folder: "/assets/leiter"
+                hint: "Quadratisches Foto sieht am besten aus (z.B. 600x600px). Ohne Foto wird der Anfangsbuchstabe als Platzhalter angezeigt."
