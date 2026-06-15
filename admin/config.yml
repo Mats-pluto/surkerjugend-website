@@ -37,12 +37,19 @@ site_url: https://suju.codebymats.de
 # --- Sprache der Oberfläche ---
 locale: de
 
-# --- Wohin kommen hochgeladene Bilder? (Standard-Ordner) ---
+# --- Wohin kommen hochgeladene Bilder? ---
 # media_folder: der echte Ordner im Repo, in dem Bilder landen.
 # public_folder: der Pfad, mit dem die Bilder später auf der Seite
-# eingebunden werden (so wie aktionen.js sie erwartet).
-# Hinweis: Einzelne Bild-Felder können diesen Standard überschreiben
-# (siehe Leiter-Foto unten -> eigener Ordner assets/leiter).
+# eingebunden werden.
+#
+# WICHTIG: ALLE über das CMS hochgeladenen Bilder landen in DIESEM einen
+# Ordner. Wir setzen bewusst KEINE eigenen media_folder pro Feld mehr.
+# Grund: Decap hat einen bekannten Fehler, bei dem ein feldspezifischer
+# media_folder beim ERSTEN Speichern ignoriert wird – das Bild landet dann
+# trotzdem hier im Standard-Ordner, während in der JSON der (falsche)
+# Spezial-Pfad steht. Ergebnis: kaputtes Bild. Mit EINEM gemeinsamen Ordner
+# stimmen Upload-Ort und JSON-Pfad immer überein. Der Ordnername ist nur
+# Technik – Besucher sehen ihn nie.
 media_folder: "assets/aktionen"
 public_folder: "assets/aktionen"
 
@@ -148,14 +155,9 @@ collections:
                 label: "Foto"
                 widget: "image"
                 required: false
-                # Eigener Ordner nur für Leiter-Fotos, getrennt von den Aktionsbildern.
-                # Ohne führenden Slash – genau wie bei den Aktionen, damit die
-                # Pfade auf GitHub Pages (Unterverzeichnis) zuverlässig stimmen.
-                media_folder: "assets/leiter"
-                public_folder: "assets/leiter"
                 hint: "Optional. Quadratisches Foto sieht am besten aus (z.B. 600x600px). Ohne Foto wird der Anfangsbuchstabe als Platzhalter angezeigt."
 
-  # --- NEU: Einblicke (Galerie) ---
+  # --- Einblicke (Galerie) ---
   - name: "einblicke"
     label: "Einblicke"
     label_singular: "Foto"
@@ -175,9 +177,6 @@ collections:
               - name: "bild"
                 label: "Foto"
                 widget: "image"
-                # Eigener Ordner nur für Galerie-Bilder, getrennt von Aktionen/Leiter.
-                media_folder: "assets/einblicke"
-                public_folder: "assets/einblicke"
                 hint: "Das Foto für die Galerie. Wird im 4:3-Format angezeigt."
 
               - name: "text"
