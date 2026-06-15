@@ -184,3 +184,25 @@ collections:
                 widget: "string"
                 required: false
                 hint: "Optional. Kurzer Text, der unter dem Bild erscheint. Leer lassen, wenn das Bild für sich stehen soll."
+
+  # --- NEU: News (Startseite) ---
+  - name: "news"
+    label: "News (Startseite)"
+    label_singular: "News"
+    files:
+      - name: "newstext"
+        label: "News-Text bearbeiten"
+        file: "data/news.json"
+        description: "Hier bearbeitet ihr den NEWS-Abschnitt auf der Startseite. Mit den Knöpfen über dem Textfeld könnt ihr Wörter fett machen oder Links einfügen. Änderungen mit 'Veröffentlichen' speichern."
+        fields:
+          - name: "text"
+            label: "News-Text"
+            # markdown-Widget: gibt den Bearbeitern einen Editor mit Knöpfen.
+            # Wir beschränken die Knöpfe bewusst auf Fett + Link, weil unsere
+            # Anzeige (js/news.js) genau diese Formatierungen unterstützt.
+            widget: "markdown"
+            buttons: ["bold", "link"]
+            # editor_components leer -> keine Einbettungen (Bilder/Code-Blöcke),
+            # die unser schlanker Anzeige-Code nicht darstellen würde.
+            editor_components: []
+            hint: "Absätze durch Leerzeile trennen. Fett und Links über die Knöpfe. Die Überschrift 'NEWS 📢' ist fest und wird hier nicht bearbeitet."
