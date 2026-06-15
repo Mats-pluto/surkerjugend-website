@@ -188,6 +188,11 @@
       "geburtsdatum": "2010-01-01",
       "taetig_seit": "2026",
       "bild": ""
+    },
+    {
+      "name": "test",
+      "rolle": "test",
+      "taetig_seit": "test"
     }
   ]
 }
