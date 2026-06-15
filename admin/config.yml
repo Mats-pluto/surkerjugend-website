@@ -94,7 +94,7 @@ collections:
                 required: false
                 hint: "Optionales Bild, das oben in der Aktion angezeigt wird."
 
-  # --- NEU: Leiterrunde ---
+  # --- Leiterrunde ---
   - name: "leiterrunde"
     label: "Leiterrunde"
     label_singular: "Leiter:in"
@@ -154,3 +154,34 @@ collections:
                 media_folder: "assets/leiter"
                 public_folder: "assets/leiter"
                 hint: "Optional. Quadratisches Foto sieht am besten aus (z.B. 600x600px). Ohne Foto wird der Anfangsbuchstabe als Platzhalter angezeigt."
+
+  # --- NEU: Einblicke (Galerie) ---
+  - name: "einblicke"
+    label: "Einblicke"
+    label_singular: "Foto"
+    files:
+      - name: "einblickeliste"
+        label: "Einblicke verwalten"
+        file: "data/einblicke.json"
+        description: "Hier könnt ihr Fotos für die Galerie hinzufügen, bearbeiten, löschen und per Ziehen umsortieren. Eine Beschreibung unter dem Bild ist optional. Änderungen mit 'Veröffentlichen' speichern."
+        fields:
+          - name: "einblicke"
+            label: "Fotos"
+            label_singular: "Foto"
+            widget: "list"
+            # Zeigt die Beschreibung (falls vorhanden) in der Übersicht.
+            summary: "{{#if fields.text}}{{fields.text}}{{else}}Foto ohne Beschreibung{{/if}}"
+            fields:
+              - name: "bild"
+                label: "Foto"
+                widget: "image"
+                # Eigener Ordner nur für Galerie-Bilder, getrennt von Aktionen/Leiter.
+                media_folder: "assets/einblicke"
+                public_folder: "assets/einblicke"
+                hint: "Das Foto für die Galerie. Wird im 4:3-Format angezeigt."
+
+              - name: "text"
+                label: "Beschreibung"
+                widget: "string"
+                required: false
+                hint: "Optional. Kurzer Text, der unter dem Bild erscheint. Leer lassen, wenn das Bild für sich stehen soll."
