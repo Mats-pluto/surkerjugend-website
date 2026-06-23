@@ -1,0 +1,19 @@
+{
+  "downloads": [
+    {
+      "titel": "Datenschutz",
+      "beschreibung": "Einverständniserklärung – Bildrecht und Nutzung",
+      "datei": "downloads/einverstaendniserklaerung-bildrecht.docx"
+    },
+    {
+      "titel": "Gesundheitszeugnis",
+      "beschreibung": "Gesundheitszeugnis 2026 der Surker Jugend",
+      "datei": "downloads/gesundheitszeugnis-2026.docx"
+    },
+    {
+      "titel": "Medikamenteneinnahme",
+      "beschreibung": "Dieses Dokument ist nur auszufüllen bei Medikamenten, die unter das Betäubungsmittelgesetz fallen.",
+      "datei": "downloads/medikamenteneinnahme-2026.docx"
+    }
+  ]
+}

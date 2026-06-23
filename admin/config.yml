@@ -4,15 +4,12 @@
 # ============================================================
 
 # --- Wo werden Änderungen gespeichert? (Login über DecapBridge) ---
-# DecapBridge übernimmt Login + das Schreiben ins GitHub-Repo.
-# Die Bearbeiter brauchen dadurch KEINEN eigenen GitHub-Account.
 backend:
   name: git-gateway
   repo: Mats-pluto/surkerjugend-website
-  branch: main          # auf welchen Branch committet wird
+  branch: main
   identity_url: https://auth.decapbridge.com/sites/4ab963ec-ec37-49bf-a97c-fbca7ab2f7ad
   gateway_url: https://gateway.decapbridge.com
-  # Aussagekräftige Commit-Nachrichten: zeigt, wer was geändert hat
   commit_messages:
     create: Create {{collection}} "{{slug}}" - {{author-name}} <{{author-login}}> via DecapBridge
     update: Update {{collection}} "{{slug}}" - {{author-name}} <{{author-login}}> via DecapBridge
@@ -21,27 +18,22 @@ backend:
     deleteMedia: Delete "{{path}}" - {{author-name}} <{{author-login}}> via DecapBridge
     openAuthoring: Message {{message}} - {{author-name}} <{{author-login}}> via DecapBridge
 
-# --- Speicher-Modus ---
 publish_mode: simple
 
-# DecapBridge-Logo im CMS
 logo_url: https://decapbridge.com/decapcms-with-bridge.svg
 
-# Link zurück zur Website im CMS-Menü
 site_url: https://suju.codebymats.de
 
-# --- Sprache der Oberfläche ---
 locale: de
 
-# --- Wohin kommen hochgeladene Bilder? ---
 media_folder: "assets/aktionen"
 public_folder: "assets/aktionen"
 
-# --- Die bearbeitbaren Inhalte ---
 collections:
-  - name: "aktionen"            # interner Name
-    label: "Aktionen"          # so heißt der Bereich im CMS-Menü
-    label_singular: "Aktion"   # Einzahl (für "Neue Aktion"-Knopf)
+  # --- Aktionen ---
+  - name: "aktionen"
+    label: "Aktionen"
+    label_singular: "Aktion"
     files:
       - name: "aktionsliste"
         label: "Aktionen verwalten"
@@ -188,3 +180,34 @@ collections:
                 widget: "string"
                 required: false
                 hint: "Text auf dem Knopf, z.B. 'Jetzt abstimmen'. Nur nötig, wenn ein Link angegeben ist."
+
+  # --- Downloads ---
+  - name: "downloads"
+    label: "Downloads"
+    label_singular: "Download"
+    files:
+      - name: "downloadliste"
+        label: "Downloads verwalten"
+        file: "data/downloads.json"
+        description: "Hier könnt ihr die Download-Karten bearbeiten (Titel und Beschreibung). Wichtig: Die Dateien selbst (.docx) müssen separat per Git ins Repo gelegt werden – das CMS kann nur Bilder hochladen, keine Dokumente. Änderungen mit 'Veröffentlichen' speichern."
+        fields:
+          - name: "downloads"
+            label: "Downloads"
+            label_singular: "Download"
+            widget: "list"
+            summary: "{{fields.titel}}"
+            fields:
+              - name: "titel"
+                label: "Titel"
+                widget: "string"
+                hint: "Name des Dokuments, z.B. 'Gesundheitszeugnis'."
+
+              - name: "beschreibung"
+                label: "Beschreibung"
+                widget: "text"
+                hint: "Kurzer Text, der unter dem Titel erscheint."
+
+              - name: "datei"
+                label: "Dateipfad"
+                widget: "string"
+                hint: "Pfad zur Datei im Repo, z.B. 'downloads/gesundheitszeugnis-2026.docx'. Die Datei muss per Git hochgeladen worden sein."
