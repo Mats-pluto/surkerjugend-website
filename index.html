@@ -97,16 +97,17 @@
     </div>
   </section>
 
-  <section class="abschnitt abschnitt--dunkel">
+  <!-- NEWS-Abschnitt: Inhalt kommt aus data/news.json via js/news.js -->
+  <!-- Das id="news-abschnitt" braucht news.js, um den Abschnitt bei -->
+  <!-- leerer News-Liste komplett auszublenden.                        -->
+  <section class="abschnitt abschnitt--dunkel" id="news-abschnitt">
     <div class="inhalt">
       <div class="abschnitt-kopf">
         <img class="kreisel" src="assets/symbol-gelb.svg" alt="">
         <h2>NEWS 📢</h2>
       </div>
-      <p>„Vest Future“ ist das Spendenprojekt der Sparkasse Vest Recklinghausen in Zusammenarbeit mit dem Medienhaus Bauer für Vereine und gemeinnützige Organisationen im Vest.</p>
-      <p>Hier haben wir die Möglichkeit, je nach Platz, Spenden in Höhe von bis zu <strong>7.500 Euro</strong> zu erhalten und davon weitere spannende Ausflüge oder anderes für euch zu finanzieren. 🤩</p>
-      <p>⭐ Mehr Informationen zur Abstimmung, Extrasternen, Spendentopf, etc. findet ihr auf <a href="https://www.vestfuture.de/" target="_blank" rel="noopener">vestfuture.de</a>. ⭐<br>
-      Wir bedanken uns für jede Stimme und teilt den Link gerne weiter! 🙏🏻</p>
+      <!-- Hier werden die News-Karten per JavaScript eingefügt -->
+      <div id="news-container"></div>
     </div>
   </section>
 
@@ -153,5 +154,6 @@
 </footer>
 
 <script src="js/main.js"></script>
+<script src="js/news.js"></script>
 </body>
 </html>

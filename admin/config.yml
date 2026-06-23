@@ -22,10 +22,6 @@ backend:
     openAuthoring: Message {{message}} - {{author-name}} <{{author-login}}> via DecapBridge
 
 # --- Speicher-Modus ---
-# "simple" (Standard): Ein Klick auf "Veröffentlichen" speichert SOFORT
-# und schaltet live. KEIN zweistufiger Entwurf-Prozess ("editorial_workflow"),
-# bei dem Änderungen versehentlich als unveröffentlichter Entwurf hängen
-# bleiben können. Wir setzen es explizit, damit das Verhalten eindeutig ist.
 publish_mode: simple
 
 # DecapBridge-Logo im CMS
@@ -38,18 +34,6 @@ site_url: https://suju.codebymats.de
 locale: de
 
 # --- Wohin kommen hochgeladene Bilder? ---
-# media_folder: der echte Ordner im Repo, in dem Bilder landen.
-# public_folder: der Pfad, mit dem die Bilder später auf der Seite
-# eingebunden werden.
-#
-# WICHTIG: ALLE über das CMS hochgeladenen Bilder landen in DIESEM einen
-# Ordner. Wir setzen bewusst KEINE eigenen media_folder pro Feld mehr.
-# Grund: Decap hat einen bekannten Fehler, bei dem ein feldspezifischer
-# media_folder beim ERSTEN Speichern ignoriert wird – das Bild landet dann
-# trotzdem hier im Standard-Ordner, während in der JSON der (falsche)
-# Spezial-Pfad steht. Ergebnis: kaputtes Bild. Mit EINEM gemeinsamen Ordner
-# stimmen Upload-Ort und JSON-Pfad immer überein. Der Ordnername ist nur
-# Technik – Besucher sehen ihn nie.
 media_folder: "assets/aktionen"
 public_folder: "assets/aktionen"
 
@@ -58,22 +42,16 @@ collections:
   - name: "aktionen"            # interner Name
     label: "Aktionen"          # so heißt der Bereich im CMS-Menü
     label_singular: "Aktion"   # Einzahl (für "Neue Aktion"-Knopf)
-    # "file" = eine einzelne Datei, in der eine Liste steht
-    # (statt vieler Einzeldateien). Passt zu data/aktionen.json.
     files:
       - name: "aktionsliste"
         label: "Aktionen verwalten"
         file: "data/aktionen.json"
         description: "Hier könnt ihr Aktionen hinzufügen, bearbeiten, löschen und per Ziehen umsortieren. Änderungen mit 'Veröffentlichen' speichern – sie sind nach kurzer Zeit live."
         fields:
-          # Das Feld "aktionen" ist eine Liste. Jeder Listeneintrag
-          # hat die darunter definierten Felder.
           - name: "aktionen"
             label: "Aktionen"
             label_singular: "Aktion"
             widget: "list"
-            # Diese Zusammenfassung zeigt das CMS in der Listübersicht,
-            # damit man Aktionen erkennt, ohne sie zu öffnen.
             summary: "{{fields.datum}} – {{fields.titel}}"
             fields:
               - name: "datum"
@@ -86,7 +64,7 @@ collections:
 
               - name: "text"
                 label: "Beschreibung"
-                widget: "text"   # mehrzeiliges Textfeld
+                widget: "text"
                 hint: "Für Fettschrift **Sternchen** verwenden. Zeilenumbrüche werden übernommen."
 
               - name: "anmeldung_url"
@@ -115,12 +93,11 @@ collections:
             label: "Leiterrunde"
             label_singular: "Person"
             widget: "list"
-            # Zeigt Name + Rolle in der Übersicht
             summary: "{{fields.name}}{{#if fields.rolle}} – {{fields.rolle}}{{/if}}"
             fields:
               - name: "name"
                 label: "Name"
-                widget: "string"   # Pflichtfeld (Standard)
+                widget: "string"
 
               - name: "rolle"
                 label: "Rolle"
@@ -130,18 +107,9 @@ collections:
 
               - name: "geburtsdatum"
                 label: "Geburtsdatum"
-                # "datetime" ist der aktuelle Widget-Typ (das alte "date" wurde
-                # entfernt). Mit time_format: false wird daraus ein reines
-                # Datumsfeld OHNE Uhrzeit – also genau ein Kalender-Tagesdatum.
                 widget: "datetime"
-                # date_format: in genau diesem Format wird der Wert in der JSON
-                # gespeichert. Passt zur Alters-Berechnung in leiter.js.
                 date_format: "YYYY-MM-DD"
                 time_format: false
-                # picker_utc: false -> der Kalender rechnet NICHT in UTC um.
-                # Ohne das könnte z.B. der 01.01. beim Speichern zum 31.12.
-                # des Vorjahres "verrutschen" (bekannter Zeitzonen-Effekt) und
-                # damit das berechnete Alter um 1 verfälschen.
                 picker_utc: false
                 hint: "Aus dem Geburtsdatum wird automatisch das aktuelle Alter berechnet und angezeigt. Das genaue Datum erscheint NICHT auf der Website, nur das Alter."
 
@@ -171,7 +139,6 @@ collections:
             label: "Fotos"
             label_singular: "Foto"
             widget: "list"
-            # Zeigt die Beschreibung (falls vorhanden) in der Übersicht.
             summary: "{{#if fields.text}}{{fields.text}}{{else}}Foto ohne Beschreibung{{/if}}"
             fields:
               - name: "bild"
@@ -184,3 +151,40 @@ collections:
                 widget: "string"
                 required: false
                 hint: "Optional. Kurzer Text, der unter dem Bild erscheint. Leer lassen, wenn das Bild für sich stehen soll."
+
+  # --- News (Startseite) ---
+  - name: "news"
+    label: "News"
+    label_singular: "News-Eintrag"
+    files:
+      - name: "newsliste"
+        label: "News verwalten"
+        file: "data/news.json"
+        description: "Hier könnt ihr aktuelle News für die Startseite verwalten. Bei leerer Liste wird der News-Abschnitt automatisch ausgeblendet. Änderungen mit 'Veröffentlichen' speichern."
+        fields:
+          - name: "news"
+            label: "News"
+            label_singular: "News-Eintrag"
+            widget: "list"
+            summary: "{{fields.titel}}"
+            fields:
+              - name: "titel"
+                label: "Titel"
+                widget: "string"
+
+              - name: "text"
+                label: "Text"
+                widget: "text"
+                hint: "Für Fettschrift **Sternchen** verwenden. Zeilenumbrüche werden übernommen."
+
+              - name: "link_url"
+                label: "Link-URL (optional)"
+                widget: "string"
+                required: false
+                hint: "Optional. Wenn angegeben, erscheint ein Knopf mit dem unten angegebenen Text."
+
+              - name: "link_text"
+                label: "Link-Beschriftung (optional)"
+                widget: "string"
+                required: false
+                hint: "Text auf dem Knopf, z.B. 'Jetzt abstimmen'. Nur nötig, wenn ein Link angegeben ist."
