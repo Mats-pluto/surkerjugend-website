@@ -1,11 +1,10 @@
 {
   "aktionen": [
     {
-      "datum": "31.05.2026",
-      "titel": "Maiaktion",
-      "text": "Unsere Maiaktion findet bald statt. Tragt euch den Termin schon im Kalender ein.\nAnmelden kannst du dich **bis zum 27.05.!** 👇🏼",
-      "anmeldung_url": "https://forms.gle/Cq2N6z7gQox6rB7m9",
-      "bild": ""
+      "titel": "Sommerpause",
+      "bild": "assets/aktionen/pause-.png",
+      "datum": "17. Juli bis 06. September 2026",
+      "text": "Das Schuljahr endet und damit beginnt unsere Sommerpause. \nWährend dieser Zeit finden *keine* offenen Gruppenstunden, Gruppenstunden in euren Altersgruppen oder Aktionen statt.\nGenießt in den nächsten 6 Wochen die freie Zeit und euren Urlaub!\nWir sehen uns am *08. September* bei unserer nächsten offenen Gruppenstunde wieder!"
     }
   ]
 }
