@@ -3,16 +3,9 @@
     {
       "name": "Maxi",
       "rolle": "Leiter",
-      "geburtsdatum": "1999-01-01",
+      "geburtsdatum": "1998-06-06",
       "taetig_seit": "2015",
       "bild": "assets/leiter/a-beautiful-picture-of-the-eiffel-tower-in-paris-the-capital-of-france-with-a-wonderful-background-in-wonderful-natural-colors-photo.jpg"
-    },
-    {
-      "name": "Erik",
-      "rolle": "",
-      "geburtsdatum": "2007-01-01",
-      "taetig_seit": "2022",
-      "bild": ""
     },
     {
       "name": "Julie",
@@ -22,31 +15,10 @@
       "bild": ""
     },
     {
-      "name": "Victoria",
+      "name": "Erik",
       "rolle": "",
-      "geburtsdatum": "2009-01-01",
-      "taetig_seit": "2024",
-      "bild": ""
-    },
-    {
-      "name": "Zoë",
-      "rolle": "",
-      "geburtsdatum": "2005-01-01",
-      "taetig_seit": "2021",
-      "bild": ""
-    },
-    {
-      "name": "Till",
-      "rolle": "",
-      "geburtsdatum": "2008-01-01",
-      "taetig_seit": "2024",
-      "bild": ""
-    },
-    {
-      "name": "Ben",
-      "rolle": "",
-      "geburtsdatum": "2009-01-01",
-      "taetig_seit": "2025",
+      "geburtsdatum": "2006-03-15",
+      "taetig_seit": "2022",
       "bild": ""
     },
     {
@@ -57,6 +29,13 @@
       "bild": ""
     },
     {
+      "name": "Phileas",
+      "rolle": "",
+      "geburtsdatum": "2009-01-01",
+      "taetig_seit": "2024",
+      "bild": ""
+    },
+    {
       "name": "Hugo",
       "rolle": "",
       "geburtsdatum": "2009-01-01",
@@ -64,14 +43,21 @@
       "bild": ""
     },
     {
-      "name": "Noah",
+      "name": "Antonia",
       "rolle": "",
-      "geburtsdatum": "2008-01-01",
+      "geburtsdatum": "2005-09-04",
       "taetig_seit": "2024",
       "bild": ""
     },
     {
-      "name": "Kristin",
+      "name": "Victoria",
+      "rolle": "",
+      "geburtsdatum": "2009-01-01",
+      "taetig_seit": "2024",
+      "bild": ""
+    },
+    {
+      "name": "Till",
       "rolle": "",
       "geburtsdatum": "2008-01-01",
       "taetig_seit": "2024",
@@ -82,69 +68,6 @@
       "rolle": "",
       "geburtsdatum": "2006-01-01",
       "taetig_seit": "2022",
-      "bild": ""
-    },
-    {
-      "name": "Antonia",
-      "rolle": "",
-      "geburtsdatum": "2006-01-01",
-      "taetig_seit": "2024",
-      "bild": ""
-    },
-    {
-      "name": "Emely",
-      "rolle": "",
-      "geburtsdatum": "2009-01-01",
-      "taetig_seit": "2024",
-      "bild": ""
-    },
-    {
-      "name": "Marieke",
-      "rolle": "",
-      "geburtsdatum": "2009-01-01",
-      "taetig_seit": "2024",
-      "bild": ""
-    },
-    {
-      "name": "Adrian",
-      "rolle": "",
-      "geburtsdatum": "2004-01-01",
-      "taetig_seit": "2019",
-      "bild": ""
-    },
-    {
-      "name": "Phileas",
-      "rolle": "",
-      "geburtsdatum": "2009-01-01",
-      "taetig_seit": "2024",
-      "bild": ""
-    },
-    {
-      "name": "Amelie",
-      "rolle": "",
-      "geburtsdatum": "2004-01-01",
-      "taetig_seit": "2019",
-      "bild": ""
-    },
-    {
-      "name": "Philipp",
-      "rolle": "",
-      "geburtsdatum": "2006-01-01",
-      "taetig_seit": "2022",
-      "bild": ""
-    },
-    {
-      "name": "Mats",
-      "rolle": "",
-      "geburtsdatum": "2004-01-01",
-      "taetig_seit": "2024",
-      "bild": ""
-    },
-    {
-      "name": "Nele",
-      "rolle": "",
-      "geburtsdatum": "2009-01-01",
-      "taetig_seit": "2024",
       "bild": ""
     },
     {
@@ -169,7 +92,28 @@
       "bild": ""
     },
     {
-      "name": "Matz",
+      "name": "Nele",
+      "rolle": "",
+      "geburtsdatum": "2009-01-01",
+      "taetig_seit": "2024",
+      "bild": ""
+    },
+    {
+      "name": "Philipp",
+      "rolle": "",
+      "geburtsdatum": "2006-01-01",
+      "taetig_seit": "2022",
+      "bild": ""
+    },
+    {
+      "name": "Amelie",
+      "rolle": "",
+      "geburtsdatum": "2004-01-01",
+      "taetig_seit": "2019",
+      "bild": ""
+    },
+    {
+      "name": "Jona",
       "rolle": "",
       "geburtsdatum": "2010-01-01",
       "taetig_seit": "2026",
@@ -183,10 +127,66 @@
       "bild": ""
     },
     {
-      "name": "Jona",
+      "name": "Marieke",
+      "rolle": "",
+      "geburtsdatum": "2009-01-01",
+      "taetig_seit": "2024",
+      "bild": ""
+    },
+    {
+      "name": "Kristin",
+      "rolle": "",
+      "geburtsdatum": "2008-01-01",
+      "taetig_seit": "2024",
+      "bild": ""
+    },
+    {
+      "name": "Zoë",
+      "rolle": "",
+      "geburtsdatum": "2005-06-01",
+      "taetig_seit": "2021",
+      "bild": ""
+    },
+    {
+      "name": "Ben",
+      "rolle": "",
+      "geburtsdatum": "2009-01-01",
+      "taetig_seit": "2025",
+      "bild": ""
+    },
+    {
+      "name": "Emely",
+      "rolle": "",
+      "geburtsdatum": "2009-01-01",
+      "taetig_seit": "2024",
+      "bild": ""
+    },
+    {
+      "name": "Mats",
+      "rolle": "",
+      "geburtsdatum": "2004-01-01",
+      "taetig_seit": "2024",
+      "bild": ""
+    },
+    {
+      "name": "Matz",
       "rolle": "",
       "geburtsdatum": "2010-01-01",
       "taetig_seit": "2026",
+      "bild": ""
+    },
+    {
+      "name": "Noah",
+      "rolle": "",
+      "geburtsdatum": "2008-01-01",
+      "taetig_seit": "2024",
+      "bild": ""
+    },
+    {
+      "name": "Adrian",
+      "rolle": "",
+      "geburtsdatum": "2004-01-01",
+      "taetig_seit": "2019",
       "bild": ""
     }
   ]
